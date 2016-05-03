@@ -1,0 +1,31 @@
+<h1>Sandwich details</h1>
+
+<p class="js-sandwich-holder" id="<%= @sandwich.id %>">Name: <%= @sandwich.name %></p>
+<p>Bread type: <%= @sandwich.bread_type %></p>
+<p>Ingredients: 
+<ul class="js-ul">
+	<% @sandwich.ingredients.each do |ingredient| %>
+	<li>
+		<%= ingredient.name %> - <%= ingredient.calories %> calories
+	</li>
+	<% end %>
+</ul>
+<p class="js-total-calories">Total calories: <%= @total_calories %></p>
+<!--p>
+	Total calories:
+	<span class="js-total-calories"><%= @total_calories %></span>
+</p-->
+
+<p><strong>Add Ingredients</strong></p>
+
+<ul class="js-list-ingredients">
+	<% @all_ingredients.each do |ingredient| %>
+	<li>
+		<button data-ingredient-id="<%=ingredient.id %>" class="js-ingredient-button"> <%= ingredient.name %> </button>
+	</li>
+	<% end %>
+</ul>
+
+
+
+
